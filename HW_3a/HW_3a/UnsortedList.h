@@ -3,7 +3,7 @@
 class UnsortedList
 {
 private:
-	const static int MAX_SIZE = 10;
+	const static int MAX_SIZE = 2;
 	int numbers[MAX_SIZE] = { 0 }; // Array that holds integer values.
 	int length = 0; // Integer to keep track of the length of the list.
 public:
