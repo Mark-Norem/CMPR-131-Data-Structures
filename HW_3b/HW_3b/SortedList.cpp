@@ -44,13 +44,30 @@ int SortedList::binarySearch(int item)
 // Appends an item to the list.
 void SortedList::insertItem(int item)
 {
-
+	int location = 0;
+	location = linearSearch(item);
+	for (int i = length; i > location; i--) {
+		numbers[i] = numbers[i - 1];
+	}
+	numbers[location] = item;
+	length++;
 }
 
 // Searches for and deletes the passed item from the list.
 void SortedList::deleteItem(int item)
 {
+	int location = 0;
+	location = linearSearch(item);
 
+	if (location < length) {
+		for (int i = location + 1; i < length; i++) {
+			numbers[i - 1] = numbers[i];
+		}
+		length--;
+	}
+	else {
+		std::cout << "The name is not in the list." << std::endl << std::endl;
+	}
 }
 // Checks to see if the list is full
 bool SortedList::isFull()
