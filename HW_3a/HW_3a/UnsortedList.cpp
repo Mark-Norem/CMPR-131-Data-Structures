@@ -17,9 +17,15 @@ void UnsortedList::insertItem(int item)
 // Searches for and deletes the passed item from the list.
 void UnsortedList::deleteItem(int item)
 {
-	for (int i = 0; i < length; i++) {
-		if (numbers[i] = item) {
-			numbers[i] = 0; // should ideally be null
+	int location = 0;
+	while (item != numbers[location] && location < length) {
+		if (location < length) {// Item has been found
+			// The last item in the list is assinged to the location
+			numbers[location] = numbers[length - 1];
+			length--;
+		}
+		else { // Item is not in list
+			std::cout << "The item is not in the list.";
 		}
 	}
 }
