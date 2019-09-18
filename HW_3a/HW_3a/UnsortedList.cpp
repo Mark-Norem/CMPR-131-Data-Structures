@@ -23,19 +23,30 @@ void UnsortedList::deleteItem(int item)
 			// The last item in the list is assinged to the location
 			numbers[location] = numbers[length - 1];
 			length--;
+			std::cout << "Item has been deleted." << std::endl;
 		}
 		else { // Item is not in list
-			std::cout << "The item is not in the list.";
+			std::cout << "The item is not in the list." << std::endl;
 		}
 	}
 }
 // Checks to see if the list is full
 bool UnsortedList::isFull()
 {
-	return false;
+	if (length == MAX_SIZE) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
 // Checks to see if the list is empty
 bool UnsortedList::isEmpty()
 {
-	return false;
+	if (length == 0) {
+		return true;
+	}
+	else {
+		return false;
+	}
 }
